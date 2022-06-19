@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+.sidebar {
+  position: fixed;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #d9fcfa;
+  transition: all .5s ease;
+}
+.sidebar header {
+  font-size: 22px;
+  color: rgb(16, 101, 112);
+  line-height: 70px;
+  background: #c6f6f8;
+  padding-left: 50px;
+  user-select: none;
+}
+.sidebar ul a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: rgb(16, 101, 112);
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(100, 100, 100, 0.1);
+  border-bottom: 1px solid rgb(168, 249, 255);
+  transition: .4s;
+}
+ul li:hover a{
+  padding-left: 50px;
+}
+.sidebar ul a i{
+  margin-right: 16px;
+}
+
+#check{
+  display: none;
+}
+label #btn,label #cancel{
+  position: absolute;
+  background: #042331;
+  border-radius: 3px;
+  cursor: pointer;
+}
+label #btn{
+  left: 40px;
+  top: 25px;
+  font-size: 35px;
+  color: white;
+  padding: 6px 12px;
+  transition: all .5s;
+}
+label #cancel{
+  z-index: 1111;
+  left: -195px;
+  top: 17px;
+  font-size: 30px;
+  color: #0a5275;
+  padding: 4px 9px;
+  transition: all .5s ease;
+}
+#check:checked ~ .sidebar{
+  left: 0px;
+}
+#check:checked ~ label #btn{
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+#check:checked ~ label #cancel{
+  left: 195px;
+}
+#check:checked ~ section{
+  margin-left: 250px;
+}
+section{
+  background: url(../image/green.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  transition: all .5s;
+  color:#0a5275;
+  /* buat table dll*/
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+section h1{
+  display: absolute;
+  text-align: center;
+  position: center;
+  padding-top: 45px;
+  padding-bottom: 20px;
+  font-size: 26pt;
+}
+
+section p{
+  display: absolute;
+  text-align: center;
+  position: center;
+  font-size: 16pt;
+}
+
+section table{
+  display: grid;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+table{
+  border-collapse: collapse;
+  box-shadow: #063146;
+  text-align: left;
+  border:none;
+} 
+th{
+    padding: 0.55rem 1.2rem;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 1500;
+    text-transform: uppercase;
+  }
+td{
+  padding: 1rem 1.4rem;
+}
+
+/* profile cards */
+.box table{
+  display: absolute;
+  height: 0vh;
+}
+.card{
+    background-color: #cdfff867;
+    width: 165px;
+    height: 800px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    border-radius: 2% 2% 2% 2%;
+    overflow: hidden;
+    box-shadow: rgba(17, 75, 122, 0.719) 0px 6px 12px -2px, rgba(12, 89, 134, 0.658) 0px 3px 7px -3px;
+}
+
+.card img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 520px;
+    margin-bottom: 0px;
+
+}
+
+.card .details{
+    margin-bottom: 10px;
+}
+
+.card .details h2{
+    font-weight: 600;
+    font-family: 'fantasy';
+    margin-bottom: 20px;
+}
+
+.card .details p{
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* form transaksi */
+.roxie{
+  width: 450px;
+  padding: 15px 40px 90px 40px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  background-color: #c6fffa3f;
+  border-radius: 5% 5% 5% 5%;
+  
+}
+.roxie td{
+  font-size: 10pt;
+}
+
+.roxie input[type = "text"],.roxie input[type = "password"],.roxie input[type = "date"],.roxie select{
+  border:0;
+  background: none;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 8px 4px;
+  width: 350px;
+  outline: none;
+  color: #063146;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.roxie input[type = "text"]:focus,.roxie input[type = "password"]:focus,.roxie input[type = "date"]:focus,.roxie select:focus{
+  width: 340px;
+  border-color: #2ecc71;
+}
+
+.roxie input[type = "submit"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: rgb(4, 70, 70);
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.roxie input[type = "reset"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  border: 2px solid #cc2e2e;
+  padding: 10px 4px;
+  outline: none;
+  color: rgb(4, 70, 70);
+  border-radius: 50% 50%;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.roxie input[type = "submit"]:hover{
+  background: #2ecc71;
+}
+
+.roxie input[type = "reset"]:hover{
+  background: #cc2e2e;
+}
+
+/* untuk list tabel data transaksi di transaksi_view.php*/
+.gg {
+  font-size: 14pt;
+  background-color: rgba(0, 255, 255, 0.377);
+}
+.gg2 {
+  font-size: 14pt;
+  background-color: rgba(255, 255, 255, 0.377);
+}
+.gg3 {
+  background-color: rgba(164, 255, 213, 0.664);
+  font-size: 16pt;
+  padding-bottom: 20px;
+
+}
+.gg4 {
+  background-color: rgba(169, 231, 255, 0.712);
+  font-size: 16pt;
+  padding-bottom: 20px;
+}
+
+/* untuk box di home.php */
+.caramel {
+  box-sizing: border-box;
+  background-color: #c4ebff98;
+  width: 1000px;
+  height: 500px;
+  padding: 5px 30px 50px 5px;
+  position: absolute;
+  top: 40%;
+  left: 53%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  background-color: #c6fffa3f;
+  border-radius: 5% 5% 5% 5%;
+}
+
+.caramel table{
+  text-align: center;
+}
